@@ -11,14 +11,14 @@ import addButton from './icons/person-add.svg'
 
 const AddButton = styled.button`
     padding-left: 100px;
-    align-self: center;
-    width: 32px;
-    height: 32px;
-    background-color: transparent;
+    //align-self: center;
+    width: 40px;
+    height: 40px;
+    background-color: pink;
     background-image: url('${addButton}');
     background-size: 100% 100%;
-    border: 0;
-    color: black;
+    //border: 0;
+    color: gray;
     font-size: 0;
     vertical-align: middle;
     cursor: pointer;
@@ -33,7 +33,7 @@ const Home = ({ transactions, reduxDeleteTransaction }) => {
 
   return (
     <div style={{ margin: '10px' }}>
-      <Link to='/add'>AddButton</Link>
+      <Link to='/add'><AddButton ></AddButton></Link>
       <ol className='transaction-list'>
         {transactions.map(transaction => (
           <TransactionItem key={transaction.id} onDeleteTransaction={removeTransaction} transaction={transaction} />

@@ -4,9 +4,9 @@ import removeButton from './icons/cancel.svg'
 
 const RemoveButton = styled.button`
     padding-left: 100px;
-    align-self: center;
-    width: 32px;
-    height: 32px;
+    align-self: flex-start;
+    width: 40px;
+    height: 40px;
     background-color: transparent;
     background-image: url('${removeButton}');
     background-size: 100% 100%;
@@ -31,11 +31,11 @@ const StyledLi = ({ className, children }) => (
 )
 
 const CustomStyledLi = styled(StyledLi)`
-    padding: 20px;
+    padding: 5px;
     background: lightblue;
     display:flex;
     @media ${device.desktopL} {
-        margin: 20px;
+        margin: 0px;
         border: 2px solid #ACA4A3;
         border-radius: 8px;
     }
