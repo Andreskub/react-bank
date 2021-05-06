@@ -35,7 +35,7 @@ const CustomStyledLi = styled(StyledLi)`
     background: lightblue;
     display:flex;
     @media ${device.desktopL} {
-        margin: 0px;
+        margin: 10px;
         border: 2px solid #ACA4A3;
         border-radius: 8px;
     }
@@ -49,7 +49,6 @@ const TransactionItem = ({ transaction, onDeleteTransaction }) =>
             <p>Date: {transaction.date}</p>
             <p>To: {transaction.namereceiver}</p>
             <p>From: {transaction.namesender}</p>
-            <p>Salary: {transaction.salary}</p>
         </div>
         <RemoveButton onClick={() => onDeleteTransaction(transaction)} />
     </CustomStyledLi>

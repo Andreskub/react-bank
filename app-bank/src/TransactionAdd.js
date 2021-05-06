@@ -17,7 +17,6 @@ const TransactionAdd = ({ dispatch }) => {
         date: event.target.date.value,
         namereceiver: event.target.namereceiver.value,
         namesender: event.target.namesender.value,
-        salary: event.target.salary.value
       };
       dispatch(addTransaction(transaction));
       setRedirect(curState => !curState);
@@ -47,10 +46,9 @@ const TransactionAdd = ({ dispatch }) => {
     redirect ? (<Redirect to="/" />) : (
       <form onSubmit={handleSubmit} className='create-transaction-form' >
         <input type="text" placeholder="Amount" name="amount" className='create-transaction-details' /><br />
-        <input type="text" placeholder="Date" name="date" className='create-transaction-details' /><br />
+        <input type="datetime-local" placeholder="Date" name="date" ></input><br />
         <input type="text" placeholder="To" name="namereceiver" className='create-transaction-details' /><br />
         <input type="text" placeholder="From" name="namesender" className='create-transaction-details' /><br />
-        <input type="text" placeholder="Salary" name="salary" className='create-transaction-details' /><br />
         <input type="submit" value="Save" /><br />
         <input type="button" value="UPDATE COUNTER" onClick={handleCounter} /><br />
       </form>)
@@ -60,6 +58,9 @@ const TransactionAdd = ({ dispatch }) => {
 /*
 <label for="transactioin">Transaction Date (month and year)</label><br />
   <input type="month" id="bdaymonth" name="bdaymonth"></input>
+
+<input type="month" id="bdaymonth" name="bdaymonth"></input>
+<label for="transaction">Transaction Date (month and year)</label><br />
 */
 
 export default connect()(TransactionAdd)

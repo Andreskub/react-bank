@@ -33,13 +33,14 @@ const Home = ({ transactions, reduxDeleteTransaction }) => {
 
   return (
     <div style={{ margin: '10px' }}>
+      <h1 style={{ backgroundColor: 'gray' }}>Salary: </h1>
       <Link to='/add'><AddButton ></AddButton></Link>
       <ol className='transaction-list'>
         {transactions.map(transaction => (
           <TransactionItem key={transaction.id} onDeleteTransaction={removeTransaction} transaction={transaction} />
         ))}
       </ol>
-    </div>
+    </div >
   );
 };
 
