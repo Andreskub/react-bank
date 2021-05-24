@@ -11,9 +11,9 @@ import addButton from './icons/person-add.svg'
 
 const AddButton = styled.button`
     padding-left: 100px;
-    //align-self: center;
     width: 40px;
     height: 40px;
+    text-align: left;
     background-color: pink;
     background-image: url('${addButton}');
     background-size: 100% 100%;
@@ -25,6 +25,27 @@ const AddButton = styled.button`
     outline: none;
 `
 
+const ButtonWrapper = styled.section`
+background: pink;
+`
+
+const TitleStyle = styled.div`
+  text-align: center;
+  background-color: lightblue;
+  padding: 1em;
+  color: ${(props) => props.color};
+  border-radius: 10px;
+  p {
+    font-size: 30px;
+  }
+`
+
+const TitleWrapper = styled.section`
+  padding: 2em;
+  background: gray;
+  border-radius: 10px;
+`
+
 const Home = ({ transactions, reduxDeleteTransaction }) => {
 
   const removeTransaction = (transaction) => {
@@ -33,8 +54,14 @@ const Home = ({ transactions, reduxDeleteTransaction }) => {
 
   return (
     <div style={{ margin: '10px' }}>
-      <h1 style={{ backgroundColor: 'gray' }}>Salary: </h1>
-      <Link to='/add'><AddButton ></AddButton></Link>
+      <TitleWrapper>
+        <TitleStyle color="black"> Transaction System</TitleStyle>
+      </TitleWrapper>
+      <ButtonWrapper >
+        <p> 
+          <Link to='/add'><AddButton></AddButton></Link> Add New Transaction
+        </p>
+      </ButtonWrapper>
       <ol className='transaction-list'>
         {transactions.map(transaction => (
           <TransactionItem key={transaction.id} onDeleteTransaction={removeTransaction} transaction={transaction} />

@@ -7,7 +7,6 @@ import { addTransaction } from './data/actions/transaction'
 
 const TransactionAdd = ({ dispatch }) => {
   const [redirect, setRedirect] = useState(false);
-  const [counter, setCounter] = useState(0);
 
   const handleSubmit = useCallback(
     (event) => {
@@ -22,26 +21,7 @@ const TransactionAdd = ({ dispatch }) => {
       setRedirect(curState => !curState);
     }, [dispatch]
   );
-
-  const handleCounter = useCallback(
-    (event) => {
-      event.preventDefault();
-      //0
-      setCounter(curState => curState + 1);
-    }, []
-  );
-
-  useEffect(() => {
-    console.log('useEffect has been called as MOUNT');
-    return () => {
-      console.log('useEffect has been called as DISPOSE');
-    };
-  }, []);
-
-  useEffect(() => {
-    console.log(`COUNTER => ${counter}`);
-  }, [counter]);
-
+  
   return (
     redirect ? (<Redirect to="/" />) : (
       <form onSubmit={handleSubmit} className='create-transaction-form' >
@@ -50,7 +30,6 @@ const TransactionAdd = ({ dispatch }) => {
         <input type="text" placeholder="To" name="namereceiver" className='create-transaction-details' /><br />
         <input type="text" placeholder="From" name="namesender" className='create-transaction-details' /><br />
         <input type="submit" value="Save" /><br />
-        <input type="button" value="UPDATE COUNTER" onClick={handleCounter} /><br />
       </form>)
   );
 }
