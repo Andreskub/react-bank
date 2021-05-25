@@ -10,39 +10,55 @@ import styled from 'styled-components'
 import addButton from './icons/person-add.svg'
 
 const AddButton = styled.button`
-    padding-left: 100px;
-    width: 40px;
+    //padding-left: 15px;
+    align: right;
+    width: 70px;
     height: 40px;
-    text-align: left;
-    background-color: pink;
+    background: ${props => props.primary ?
+    "white":"palevioletered"};
+    //background-color: pink;
     background-image: url('${addButton}');
     background-size: 100% 100%;
-    //border: 0;
+    
     color: gray;
-    font-size: 0;
     vertical-align: middle;
     cursor: pointer;
-    outline: none;
+    border-radius: 30px;
+`
+
+const ButtonWrapperText = styled.a`
+  text-align: left;
+  color: black;
+  padding-right: 20px;
 `
 
 const ButtonWrapper = styled.section`
-background: pink;
+  padding: 0.8em 1em;
+  width: 250px;
+  background: pink;
+  text-align: center;
+  border-radius: 10px;
+`
+
+const SubtitleStyle = styled.a`
+  text-align: center;
+  color: white;
 `
 
 const TitleStyle = styled.div`
   text-align: center;
-  background-color: lightblue;
-  padding: 1em;
-  color: ${(props) => props.color};
+  align: center;
+  width: 500px;
+  color: #00134d;
+  background: white;
   border-radius: 10px;
-  p {
-    font-size: 30px;
-  }
+  font-size: 50px;
+  border: 1px;
 `
 
 const TitleWrapper = styled.section`
   padding: 2em;
-  background: gray;
+  background: #00134d;
   border-radius: 10px;
 `
 
@@ -55,12 +71,13 @@ const Home = ({ transactions, reduxDeleteTransaction }) => {
   return (
     <div style={{ margin: '10px' }}>
       <TitleWrapper>
-        <TitleStyle color="black"> Transaction System</TitleStyle>
+        <TitleStyle>Transaction System</TitleStyle>
+        <SubtitleStyle>Welcome to the new Transaction System of the National Bank of Pilar</SubtitleStyle>
       </TitleWrapper>
-      <ButtonWrapper >
-        <p> 
-          <Link to='/add'><AddButton></AddButton></Link> Add New Transaction
-        </p>
+      <p></p> 
+      <ButtonWrapper primary>
+        <ButtonWrapperText>New Transaction</ButtonWrapperText>
+        <Link to='/add'><AddButton></AddButton></Link>
       </ButtonWrapper>
       <ol className='transaction-list'>
         {transactions.map(transaction => (

@@ -24,7 +24,7 @@ const TransactionAdd = ({ dispatch }) => {
   
   return (
     redirect ? (<Redirect to="/" />) : (
-      <form onSubmit={handleSubmit} className='create-transaction-form' >
+      <form onSubmit={handleSubmit} className='create-transaction-form' align="center">
         <input type="text" placeholder="Amount" name="amount" className='create-transaction-details' /><br />
         <input type="datetime-local" placeholder="Date" name="date" ></input><br />
         <input type="text" placeholder="To" name="namereceiver" className='create-transaction-details' /><br />
