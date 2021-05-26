@@ -3,7 +3,35 @@ import { Redirect } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 
-import { addTransaction } from './data/actions/transaction'
+import { addTransaction } from './data/actions/transaction';
+
+import styled from 'styled-components';
+
+const ItemStyle = styled.a`
+  //padding-right: 10px;
+  padding: 10px;
+`
+
+const FormTitleStyle = styled.a`
+  text-align: center;
+  align: center;
+  width: 500px;
+  color: #00134d;
+  background: white;
+  border-radius: 10px;
+  font-size: 50px;
+  border: 1px;
+`
+const FormSubtitleStyle = styled.a`
+  text-align: center;
+  color: white;
+`
+
+const FormWrapper = styled.section`
+  padding: 2em;
+  background: #00134d;
+  border-radius: 10px;
+`
 
 const TransactionAdd = ({ dispatch }) => {
   const [redirect, setRedirect] = useState(false);
@@ -24,13 +52,20 @@ const TransactionAdd = ({ dispatch }) => {
   
   return (
     redirect ? (<Redirect to="/" />) : (
-      <form onSubmit={handleSubmit} className='create-transaction-form' align="center">
-        <input type="text" placeholder="Amount" name="amount" className='create-transaction-details' /><br />
-        <input type="datetime-local" placeholder="Date" name="date" ></input><br />
-        <input type="text" placeholder="To" name="namereceiver" className='create-transaction-details' /><br />
-        <input type="text" placeholder="From" name="namesender" className='create-transaction-details' /><br />
-        <input type="submit" value="Save" /><br />
-      </form>)
+      <div style={{ margin: '10px' }}>
+        <FormWrapper>
+          <FormTitleStyle>New Transaction</FormTitleStyle><br/>
+          <FormSubtitleStyle>Complete the fields</FormSubtitleStyle>
+          <form onSubmit={handleSubmit} className='create-transaction-form' align="center">
+            <ItemStyle><input type="text" placeholder="Amount" name="amount"  lassName='create-transaction-details'/></ItemStyle>
+            <ItemStyle><input type="datetime-local" placeholder="Date" name="date" ></input></ItemStyle>
+            <ItemStyle><input type="text" placeholder="To" name="namereceiver" className='create-transaction-details' /></ItemStyle>
+            <ItemStyle><input type="text" placeholder="From" name="namesender" className='create-transaction-details' /></ItemStyle>
+            <input type="submit" value="Save" /><br />
+          </form>
+        </FormWrapper>
+      </div>
+      )
   );
 }
 

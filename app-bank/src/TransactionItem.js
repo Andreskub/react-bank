@@ -3,17 +3,15 @@ import styled from 'styled-components'
 import removeButton from './icons/cancel.svg'
 
 const RemoveButton = styled.button`
-    //align-self: flex-start;
-    //align-self: right;
+    margin-left: auto;
+    margin-right: 2px;
     width: 40px;
     height: 40px;
     background-color: transparent;
     background-image: url('${removeButton}');
     background-size: 100% 100%;
     border: 0;
-    vertical-align: middle;
     cursor: pointer;
-    outline: none;
 `
 
 const size = {

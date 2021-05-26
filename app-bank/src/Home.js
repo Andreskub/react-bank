@@ -10,20 +10,20 @@ import styled from 'styled-components'
 import addButton from './icons/person-add.svg'
 
 const AddButton = styled.button`
-    //padding-left: 15px;
-    align: right;
-    width: 70px;
-    height: 40px;
-    background: ${props => props.primary ?
-    "white":"palevioletered"};
-    //background-color: pink;
-    background-image: url('${addButton}');
-    background-size: 100% 100%;
-    
-    color: gray;
-    vertical-align: middle;
-    cursor: pointer;
-    border-radius: 30px;
+  //padding-left: 15px;
+  align: right;
+  width: 70px;
+  height: 40px;
+  background: ${props => props.primary ?
+  "white":"palevioletered"};
+  //background-color: pink;
+  background-image: url('${addButton}');
+  background-size: 100% 100%;
+  
+  color: gray;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 30px;
 `
 
 const ButtonWrapperText = styled.a`
@@ -41,11 +41,13 @@ const ButtonWrapper = styled.section`
 `
 
 const SubtitleStyle = styled.a`
+  margin: 0 auto;
   text-align: center;
   color: white;
 `
 
 const TitleStyle = styled.div`
+  margin: auto;
   text-align: center;
   align: center;
   width: 500px;
@@ -72,7 +74,7 @@ const Home = ({ transactions, reduxDeleteTransaction }) => {
     <div style={{ margin: '10px' }}>
       <TitleWrapper>
         <TitleStyle>Transaction System</TitleStyle>
-        <SubtitleStyle>Welcome to the new Transaction System of the National Bank of Pilar</SubtitleStyle>
+        <SubtitleStyle>Welcome to the new Transaction System of the National Bank of Alberta</SubtitleStyle>
       </TitleWrapper>
       <p></p> 
       <ButtonWrapper primary>
